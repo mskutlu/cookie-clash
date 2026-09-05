@@ -1,0 +1,31 @@
+{
+  "name": "cookie-clash",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "e2e": "tsx scripts/e2e.ts",
+    "bot": "tsx scripts/bot.ts",
+    "validator": "solana-test-validator --reset --bpf-program 8t1WJbixxfUk9Q3eyVt7DaGi8y2fE2embzHdBU9hFXh6 target/deploy/cookie_clash.so",
+    "deploy": "solana program deploy target/deploy/cookie_clash.so --url ${COOKIE_RPC:-https://rpc.cookiescan.io} --keypair ${DEPLOY_KEYPAIR:?set DEPLOY_KEYPAIR to your funded keypair json path} --program-id keypairs/cookie_clash-keypair.json --with-compute-unit-price 10000"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.4",
+    "buffer": "^6.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  }
+}
