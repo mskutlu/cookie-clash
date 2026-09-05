@@ -6,3 +6,4 @@ keypairs/
 .env
 *.log
 .DS_Store
+test-ledger/
